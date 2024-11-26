@@ -9,9 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $author = $_POST['author'];
     $genre = $_POST['genre'];
     $year = $_POST['year'];
+    $isbn = $_POST['isbn'];
 
     // Prepare and execute the insert query
-    $sql = "INSERT INTO books (title, author, genre, year_published) VALUES ('$title', '$author', '$genre', '$year')";
+    $sql = "INSERT INTO books (title, author, genre, year_published,isbn) VALUES ('$title', '$author', '$genre', '$year', '$isbn')";
     
     if ($conn->query($sql) === TRUE) {
         $message = "New book added successfully!";
@@ -146,6 +147,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="year">Year:</label>
             <input type="number" id="year" name="year" required>
 
+            <label for="year">Reference Number:</label>
+            <input type="number" id="isbn" name="isbn" required>
+
             <input type="submit" value="Add Book">
         </form>
         <a href="view_books.php" style="display: block; text-align: center; margin-top: 20px;">View All Books</a>
@@ -153,11 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Footer -->
     <div class="footer">
-        <p><strong>Group E</strong></p>
-        <p>DBITNRB609824 - DERRICK OMONDI OTIENO</p>
-        <p>DBITNRB333824 - MARTIN NJOROGE</p>
-        <p>DBITNRB548822 - GRACE LUCAS</p>
-        <p>DBITLMR346824 - CYNTHIA MWANGI</p>
+        <p><strong>&copy; Copyright 2024</strong></p>
     </div>
 
 </body>

@@ -48,6 +48,7 @@ $result = $conn->query($sql);
             <th>Author</th>
             <th>Genre</th>
             <th>Year</th>
+            <th>Reference</th>
             <th>Actions</th>
         </tr>
 
@@ -61,6 +62,7 @@ $result = $conn->query($sql);
                 echo "<td>" . htmlspecialchars($row['author']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['genre']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['year_published']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['isbn']) . "</td>";
                 echo "<td class='action-icons'>"
                     . "<a onclick='deleteBook(" . htmlspecialchars($row['book_id']) . ")'>"
                     . "<i class='fas fa-trash'></i></a>"
@@ -78,16 +80,7 @@ $result = $conn->query($sql);
 </div>
 
 <!-- Footer -->
-<div class="footer">
-    <p>Group E</p>
-    <p>Team Members:</p>
-    <ul>
-        <li>DBITNRB609824 - Derrick Omondi Otieno</li>
-        <li>DBITNRB333824 - Martin Njoroge</li>
-        <li>DBITNRB548822 - Grace Lucas</li>
-        <li>DBITLMR346824 - Cynthia Mwangi</li>
-    </ul>
-</div>
+<?php include 'includes/footer.php' ?>
 
 <script>
     function deleteBook(bookId) {
